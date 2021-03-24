@@ -1,7 +1,7 @@
 const PostService = require("../src/services/post")
 const { assert } = require("chai")
 const UserModel = require("../src/models/User")
-const { ConnectToDB } = require("./..//src/MongoDB")
+const { ConnectToMongoDB } = require("./..//src/MongoDB")
 const config = require("../config")
 const PostModel = require("../src/models/Post")
 const Messages = require("../src/utils/Messages")
@@ -17,7 +17,7 @@ describe("POST SERVICE", function () {
     let user
 
     this.beforeAll(async () => {
-        await ConnectToDB(config.MONGOURI_TESTDB)
+        await ConnectToMongoDB(config.MONGOURI_TESTDB)
         await UserModel.deleteMany()
         await PostModel.deleteMany()
         user = await new UserModel({

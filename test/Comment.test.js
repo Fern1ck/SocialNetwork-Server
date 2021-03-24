@@ -4,7 +4,7 @@ const { assert } = require("chai")
 const PostModel = require("../src/models/Post")
 const UserModel = require("../src/models/User")
 const CommentModel = require("../src/models/Comment")
-const { ConnectToDB } = require("../src/MongoDB")
+const { ConnectToMongoDB } = require("../src/MongoDB")
 const config = require("../config")
 const Messages = require("../src/utils/Messages")
 const { RANDOM_ID } = require("./testUtils")
@@ -16,7 +16,7 @@ describe("COMMENT SERVICE", function () {
     let user, post
 
     this.beforeAll(async () => {
-        await ConnectToDB(config.MONGOURI_TESTDB)
+        await ConnectToMongoDB(config.MONGOURI_TESTDB)
         await UserModel.deleteMany()
         await PostModel.deleteMany()
         await CommentModel.deleteMany()

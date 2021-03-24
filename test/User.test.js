@@ -1,7 +1,7 @@
 const UserService = require("../src/services/user")
 const { assert } = require("chai")
 const UserModel = require("../src/models/User")
-const { ConnectToDB } = require("./../src/MongoDB")
+const { ConnectToMongoDB } = require("./../src/MongoDB")
 const config = require("../config")
 const Messages = require("../src/utils/Messages")
 const { RANDOM_ID } = require("./testUtils")
@@ -16,7 +16,7 @@ describe("USER SERVICE", function () {
     const username2 = "test1234"
 
     this.beforeAll(async () => {
-        await ConnectToDB(config.MONGOURI_TESTDB)
+        await ConnectToMongoDB(config.MONGOURI_TESTDB)
         await UserModel.deleteMany()
         user1 = await new UserModel({
             email: email1,

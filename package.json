@@ -27,9 +27,9 @@
         "prettier": "^2.2.1"
     },
     "scripts": {
-        "start": "cls && nodemon index.js",
+        "start": "nodemon index.js",
         "format": "prettier --write \"**/*.+(js|jsx|tsx|ts|json|css|md|scss)\"",
-        "test": "cls && mocha 'test/**/*.js' --timeout 600000 --debug --recursive --exit"
+        "test": "mocha 'test/**/*.js' --timeout 600000 --debug --recursive --exit"
     },
     "author": "",
     "license": "ISC"
