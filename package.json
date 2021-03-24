@@ -1,0 +1,36 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "connect-redis": "^5.1.0",
+        "cookie-parser": "^1.4.5",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "joi": "^17.3.0",
+        "mongoose": "^5.11.9",
+        "morgan": "^1.10.0",
+        "passport": "^0.4.1",
+        "passport-local": "^1.0.0",
+        "redis": "^3.0.2"
+    },
+    "devDependencies": {
+        "chai": "^4.3.0",
+        "eslint": "^7.18.0",
+        "eslint-plugin-jest": "^24.1.3",
+        "eslint-plugin-mocha": "^8.0.0",
+        "mocha": "^8.3.0",
+        "nodemon": "^2.0.6",
+        "prettier": "^2.2.1"
+    },
+    "scripts": {
+        "start": "cls && nodemon index.js",
+        "format": "prettier --write \"**/*.+(js|jsx|tsx|ts|json|css|md|scss)\"",
+        "test": "cls && mocha 'test/**/*.js' --timeout 600000 --debug --recursive --exit"
+    },
+    "author": "",
+    "license": "ISC"
+}
